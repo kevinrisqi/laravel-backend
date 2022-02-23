@@ -43,4 +43,12 @@ class TransactionController extends Controller
         );
 
     }
+
+    public function checkout(Request $request)
+    {
+        $request->validate([
+            'items' => 'required|array',
+            'items.*.id'
+        ])
+    }
 }
